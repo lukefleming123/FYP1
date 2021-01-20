@@ -4,16 +4,24 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+body {font-family: Arial, Helvetica, sans-serif;
+      background-color: #eee;
+}
+
+form {border: 3px solid #f1f1f1;
+      background-color:#ffffff ;
+}
 
 input[type=text], input[type=password] {
-  width: 100%;
+    
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
-  display: inline-block;
+  display: block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  
+  
 }
 
 button {
@@ -23,7 +31,7 @@ button {
   margin: 8px 0;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
 }
 
 button:hover {
@@ -48,6 +56,10 @@ img.avatar {
 
 .container {
   padding: 16px;
+  
+}
+.container2 {
+    padding: 16px;
 }
 
 span.psw {
@@ -64,36 +76,43 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+  
+  h2.Logo {
+      text-align: center;
+  }
+  
+ 
 }
 </style>
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h2 style="text-align: center;">SupplyMe.ie</h2>
 
+
+    
 <form action="Login" method="post">
   <div class="imgcontainer">
-    <img src="pexels-erik-scheel-95425.jpg" alt="Avatar" class="avatar">
+    <img src="images/pexels-erik-scheel-95425.jpg" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="loginusername"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="loginusername" required>
+    <label for="loginusername"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="loginusername" required>
 
     <label for="loginpass"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="loginpass" required>
         
     <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+    
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
+  <div class="container2" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+
 
 </body>
 </html>
