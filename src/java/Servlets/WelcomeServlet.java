@@ -16,14 +16,15 @@ import javax.servlet.http.HttpServletResponse;
 public class WelcomeServlet extends HttpServlet {  
 public void doPost(HttpServletRequest request, HttpServletResponse response)  
     throws ServletException, IOException {  
-  //Part of following code taken from https://www.tutorialspoint.com/servlets/servlets-page-redirect.htm
+  //Part of following code taken from https://www.tutorialspoint.com/servlets/servlets-page-redirect.htm Iteration 2
  // Set response content type
       response.setContentType("text/html");
 
       // New location to be redirected
-      String site = new String("index.jsp");
+      String site = new String("LandingPage.html");
 
       response.setStatus(response.SC_MOVED_TEMPORARILY);
-      response.setHeader("Location", site);      
+      response.setHeader("Location", site); 
+      
 }
 }  

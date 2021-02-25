@@ -4,40 +4,55 @@
         <servlet-name>Register</servlet-name>
         <servlet-class>Servlets.Register</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>OrderCategoryServlet</servlet-name>
+        <servlet-class>Servlets.OrderCategoryServlet</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>Servlets.Login</servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>Requests</servlet-name>
         <servlet-class>Servlets.Requests</servlet-class>
     </servlet>
-    
     <servlet>
         <servlet-name>WelcomeServlet</servlet-name>
         <servlet-class>Servlets.WelcomeServlet</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>OrdersServlet</servlet-name>
+        <servlet-class>Servlets.OrdersServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetOrdersServlet</servlet-name>
+        <servlet-class>Servlets.GetOrdersServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Register</servlet-name>
         <url-pattern>/Register</url-pattern>
     </servlet-mapping>
-    
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
-    
-    
-    
     <servlet-mapping>
         <servlet-name>WelcomeServlet</servlet-name>
         <url-pattern>/WelcomeServlet</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>OrdersServlet</servlet-name>
+        <url-pattern>/OrdersServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetOrdersServlet</servlet-name>
+        <url-pattern>/Index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderCategoryServlet</servlet-name>
+        <url-pattern>/OrderCategoryServlet</url-pattern>
+    </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>register.html</welcome-file>
+        <welcome-file>LandingPage.html</welcome-file>
     </welcome-file-list>
 </web-app>

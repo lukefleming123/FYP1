@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Servlets;
-//Part of the followng code was taken from https://www.javatpoint.com/example-of-login-form-in-servlet Iteration 1
+// iteration 2, Part of the followng code was taken from https://www.javatpoint.com/example-of-login-form-in-servlet 
 import java.io.IOException;  
 import java.io.PrintWriter;  
   
@@ -21,13 +21,22 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
   
     response.setContentType("text/html");  
     PrintWriter out = response.getWriter();  
-          
+         //getting value of input from form elements 
     String n=request.getParameter("loginusername");  
     String p=request.getParameter("loginpass");  
-          
+      //if they are validated through the Login DAO than the request is forwarded to the welcome servlet     
     if(LoginDao.validate(n, p)){  
-        RequestDispatcher rd=request.getRequestDispatcher("WelcomeServlet");  
-        rd.forward(request,response);  
+        //RequestDispatcher rd=request.getRequestDispatcher("WelcomeServlet");  
+        //rd.forward(request,response); 
+        //changes made in iteration 4
+        response.setContentType("text/html");
+      
+      // New location to be redirected
+      String site = new String("LandingPage.html");
+
+      response.setStatus(response.SC_MOVED_TEMPORARILY);
+      response.setHeader("Location", site); 
+        
     }  
     else{  
         out.print("Sorry username or password error");  

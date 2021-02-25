@@ -1,33 +1,157 @@
-<html>  
-<body>  
-    <!-- executes register.java file -->
-<form action="Register" method="post">  
-  
-Name:<input type="text" name="userName"/><br/><br/>  
-Business Category<select name="userCategory">  
-<option>Hardware</option>  
-<option>Fresh Food</option>  
-<option>Bakery</option>  
-</select><br/><br/>  
-BIO:<input type="text" name="userBIO"/><br/><br/> 
-Address:<input type="text" name="userAddress"/><br/><br/> 
-County:  
-<select name="userCounty">  
-<option>Cork</option>  
-<option>Tipperary</option>  
-<option>Kerry</option>  
-</select><br/><br/>
-Email Id:<input type="text" name="userEmail"/><br/><br/>  
-Phone:<input type="number" name="userPhone"/><br/><br/>  
-Password:<input type="password" name="userPass"/><br/><br/> 
+<html> 
+    <head>
+        <link rel="stylesheet" href="CSS/LoginRegistration.css">
+   
+    </head>
+    
+ <body class="body">
+    
+     
+     
+    
+    <div class="container bg-light">
+         <!-- executes register.java file, validate form executes java script before form can be submitted -->
+    <form action="Register" onsubmit="return validateform()" method="post" id="register_form">  
+      
+     <h1 class="Logo" id="main-title">SupplyMe.ie</h1>
+            
+        
+    <div class="form-group">
+        <label class="labels" for="usr">Business Name:</label>
+        <input class="inputs" type="text" id="usr" name="userName" placeholder="" required maxlength="50"/>
+    </div>
+        
+    <div class="form-group">
+     <label class="labels" for="category" >Business Category:</label>
+    <select class="inputs" id="category" name="userCategory" required>
+        <option value="" >Select Category</option>
+        <option value ="" selected>Select Category for Order</option>
+        <option value=	"Automotive">Automotive	</option>
+        <option value=	"Business Support & Supplies">Business Support & Supplies</option>
+        <option value=	"Computers & Electronics">Computers & Electronics</option>
+        <option value=	"Construction & Contractors">Construction & Hardware</option>
+        <option value=	"Education">Education</option>
+        <option value=	"Entertainment">Entertainment</option>
+        <option value=	"Food & Dining">Food & Dining</option>
+        <option value=	"Health & Medicine">Health & Medicine</option>
+        <option value=	"Home & Garden	">Home & Garden</option>
+        <option value=	"Legal & Financial">Legal & Financial</option>
+        <option value=	"Manufacturing & Distribution">Manufacturing & Distribution</option>
+        <option value=	"Merchants (Retail)">Merchants (Retail)</option>
+        <option value=	"Miscellaneous">Miscellaneous</option>
+        <option value=	"Travel & Transportation">Travel & Transportation</option> 
+    </select>
+    </div>
+        
+    <div class="form-group">  
+    <label class="labels" for="bio">BIO:</label>    
+    <input class="inputs" type="text" id="bio" name="userBIO" placeholder="" maxlength="50"/>
+    </div>
+    
+    <div class="form-group">   
+    <label class="labels" for="address">Address:</label>    
+    <input class="inputs" type="text" id="address" name="userAddress" required maxlength="100"/>
+    </div>
+        
+    <div class="form-group">  
+    <label class="labels" for="county">County:</label>      
+    <select class="inputs" id="county" name="userCounty" required>
+        <option value="" selected>Select County</option>
+        <option value="Cork">Cork</option>
+        <option value="Galway">Galway</option>
+        <option value="Mayo">Mayo</option>
+        <option value="Donegal">Donegal</option>
+        <option value="Kerry">Kerry</option>
+        <option value="Tipperary">Tipperary</option>
+        <option value="Clare">Clare</option>
+        <option value="Tyrone">Tyrone</option>
+        <option value="Antrim">Antrim</option>
+        <option value="Limerick">Limerick</option>
+        <option value="Roscommon">Roscommon</option>
+        <option value="Down">Down</option>
+        <option value="Wexford">Wexford</option>
+        <option value="Meath">Meath</option>
+        <option value="Londonderry">Londonderry</option>
+        <option value="Kilkenny">Kilkenny</option>
+        <option value="Wicklow">Wicklow</option>
+        <option value="Offaly">Offaly</option>
+        <option value="Cavan">	Cavan</option>
+        <option value="Waterford">Waterford	</option>
+        <option value="Westmeath">Westmeath	</option>
+        <option value="Sligo">Sligo</option>
+        <option value="Laois">Laois</option>
+        <option value="Kildare">Kildare</option>
+        <option value="Fermanagh">Fermanagh</option>
+        <option value="Leitrim">Leitrim</option>
+        <option value="Armagh">Armagh</option>
+        <option value="Monaghan">Monaghan</option>
+        <option value="Longford">Longford</option>
+        <option value="Dublin">Dublin</option>
+        <option value="Carlow">Carlow</option>
+        <option value="Louth">Louth</option>
+    </select>
+    </div>
+    
+    <div class="form-group">   
+    <label class="labels" for="usremail">Email Address:</label>    
+    <input class="inputs" type="email" id="usremail" name="userEmail" maxlength="50"/>
+    </div>
+        
+    <div class="form-group">   
+    <label class="labels" for="usrphone">Contact no:</label>    
+    <input class="inputs" type="tel" id="usrphone" name="userPhone" required />
+    <script type="text/javascript">
+    //Validates input into the Phone and password input    
+    function validateform(){
+        //creating variables for form elements 
+    var usrphone = document.getElementById('usrphone').value;
+    var usrpassword = document.getElementById('usrpassword').value;
+    if(usrphone.length < 7) {
+        alert("Must be either a valid mobile or landline number");
+        document.getElementById('usrphone').className += ' required';
+        return false;
+    }else if (usrpassword < 8) {
+        alert("Password must be at least 8 characters long");
+        document.getElementById('usrpassword').className += ' required';
+        return false;
+    }else if (usrpassword > 35)  {
+        alert("Password must be between 8 and 35 characters long");
+        document.getElementById('usrpassword').className += ' required';
+        return false;
+    }
+    
+    }
+    
+    </script>
+    </div>
+        
+    <div class="form-group">   
+    <label class="labels" for="usrpassword">Password:</label>    
+    <input class="inputs" type="password" id="usrpassword" name="userPass" placeholder="minimum 8 characters" required="" />
+    </div>
+        
+    <div class="form-group">   
+       
+    <input  type="checkbox" id="tcs" name="tandcs" required/>
+    <label class="labels" for="tcs">I agree to the terms and conditions.</label> 
+    </div>
+        
+    <div>  
+    <button class="register" type="submit" id="register" >Register</button>
+    </div>
+    
+    <div> 
+        
+        <span> Already registered? <a href="login.html"  id="login" > Login</a></span>    
+    </div>
+     
+    
 
   
-<br/><br/>  
-<input type="submit" value="register"/>  
-
-
-  
-</form>  
-<a href="login.html">Login</a>   
+    </form>  
+    </div>   
+   
+   
 </body>  
 </html>  
+
